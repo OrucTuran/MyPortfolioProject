@@ -1,0 +1,42 @@
+﻿@model List<MyPortfolioProject.Models.Contact>
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "~/Views/Admin/Index.cshtml";
+    int count = 0;
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Gönderen</th>
+        <th>Gönderme Tarihi</th>
+        <th>Konu</th>
+        <th>Durum</th>
+        <th>Mesajı Aç</th>
+        <th>Mesajı Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.NameSurname</td>
+            <td>@item.SendDate</td>
+            <td>@item.Subject</td>
+
+            @if (item.IsRead.Equals(false))
+            {
+                <td><a href="/Message/ChangeMessageStatusToTrue/@item.ContactID" class="btn btn-outline-info">Okundu Olarak İşaretle</a></td>
+            }
+            else
+            {
+                <td><a href="/Message/ChangeMessageStatusToFalse/@item.ContactID" class="btn btn-outline-info">Okunmadı Olarak İşaretle</a></td>
+            }
+
+            <td><a href="#" class="btn btn-outline-warning">Mesajı Aç</a></td>
+            <td><a href="#" class="btn btn-outline-danger">Mesajı Sil</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Education/CreateEducation/" class="btn btn-outline-info">Yeni Mesaj</a>
