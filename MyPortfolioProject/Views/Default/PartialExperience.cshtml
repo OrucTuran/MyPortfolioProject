@@ -1,4 +1,6 @@
-﻿<div class="container-fluid">
+﻿@model List<MyPortfolioProject.Models.Experience>
+
+<div class="container-fluid">
     <div class="container">
         <div class="row g-0">
             <div class="col-lg-3">
@@ -12,48 +14,23 @@
             <div class="col-lg-9">
                 <div class="experience-content h-100 pt-6 ps-6 pb-6">
                     <div class="row g-4">
-                        <div class="col-12">
-                            <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="d-flex align-items-center mb-3">
-                                    <p class="fs-5 mb-0 me-4">Historian</p>
-                                    <div>
-                                        <span class="fa fa-calendar me-1"></span> 2017 - 2019
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-12">
+                                <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <p class="fs-5 mb-0 me-4">@item.Title</p>
+                                        <div>
+                                            <span class="fa fa-calendar me-1"></span> @item.Date
+                                        </div>
                                     </div>
+                                    <h4 class="mb-3">@item.SubTitle</h4>
+                                    <p class="mb-0">
+                                        @item.Description
+                                    </p>
                                 </div>
-                                <h4 class="mb-3">Seinor UI/UX Desinger</h4>
-                                <p class="mb-0">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, a quasi velit sint atque non saepe quaerat ducimus, nobis error cupiditate, nisi repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
-                                </p>
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="d-flex align-items-center mb-3">
-                                    <p class="fs-5 mb-0 me-4">Historian</p>
-                                    <div>
-                                        <span class="fa fa-calendar me-1"></span> 2017 - 2019
-                                    </div>
-                                </div>
-                                <h4 class="mb-3">UI/UX Designer</h4>
-                                <p class="mb-0">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, a quasi velit sint atque non saepe quaerat ducimus, nobis error cupiditate, nisi repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="d-flex align-items-center mb-3">
-                                    <p class="fs-5 mb-0 me-4">Historian</p>
-                                    <div>
-                                        <span class="fa fa-calendar me-1"></span> 2017 - 2019
-                                    </div>
-                                </div>
-                                <h4 class="mb-3">Junior Visual Designer</h4>
-                                <p class="mb-0">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, a quasi velit sint atque non saepe quaerat ducimus, nobis error cupiditate, nisi repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
-                                </p>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>

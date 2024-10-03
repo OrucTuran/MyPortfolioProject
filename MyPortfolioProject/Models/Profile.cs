@@ -20,5 +20,8 @@ namespace MyPortfolioProject.Models
         public string PhoneNumber { get; set; }
         public string GitHubURL { get; set; }
         public string Address { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string ImageURL { get; set; }
     }
 }

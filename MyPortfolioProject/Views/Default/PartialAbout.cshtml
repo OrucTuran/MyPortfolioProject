@@ -1,50 +1,44 @@
-﻿<div class="container-fluid" id="pigraAbout">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-12 col-lg-3">
-                <div class="about-header bg-dark h-100 pt-6 pe-6 pb-6">
-                    <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
-                        <p class="text-white sub-title">Hakkımda</p>
-                        <h1 class="display-6 text-white mb-0">UI Designer based in NYC, USA since 2025</h1>
+﻿@model List<MyPortfolioProject.Models.About>
+
+
+@foreach (var item in Model)
+{
+    <div class="container-fluid" id="pigraAbout">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-12 col-lg-3">
+                    <div class="about-header bg-dark h-100 pt-6 pe-6 pb-6">
+                        <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                            <p class="text-white sub-title">Hakkımda</p>
+                            <h1 class="display-6 text-white mb-0">Oruç Turan Junior Akademi Danışmanlık (iş verin)</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-lg-9">
-                <div class="about-content h-100 pt-6 ps-6 pb-6">
-                    <div class="row g-5">
-                        <div class="col-xl-5">
-                            <div class="about-img bg-light p-4 wow fadeInUp" data-wow-delay="0.1s">
-                                <img src="~/Content/Pigra-1.0.0/img/about.jpg" class="img-fluid w-100" alt="Image">
-                                <div class="sosial-icon">
-                                    <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
-                                    <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-twitter text-white"></i></a>
-                                    <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-instagram text-white"></i></a>
-                                    <a class="btn btn-primary btn-sm-square mb-0" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                <div class="col-12 col-lg-9">
+                    <div class="about-content h-100 pt-6 ps-6 pb-6">
+                        <div class="row g-5">
+                            <div class="col-xl-5">
+                                <div class="about-img bg-light p-4 wow fadeInUp" data-wow-delay="0.1s">
+                                    <img src="@item.ImageURL" class="img-fluid w-100" alt="Image">
+                                    <div class="sosial-icon">
+                                        <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
+                                        <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-twitter text-white"></i></a>
+                                        <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-instagram text-white"></i></a>
+                                        <a class="btn btn-primary btn-sm-square mb-0" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-7 wow fadeInUp" data-wow-delay="0.3s">
-                            <h4 class="mb-4">Hello, I'm Mezbah, Based in USA</h4>
-                            <p class="mb-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam repellat, sint magni incidunt voluptatum eveniet numquam vel facilis sit similique a mollitia et dolorum aperiam repellendus ipsum, quidem nemo eligendi!
-                            </p>
-                            <div class="row g-4 mb-4">
-                                <div class="col-6">
-                                    <p><strong class="fw-bold text-dark">Phone :</strong> + 113-804-9098</p>
-                                    <p><strong class="fw-bold text-dark">skype :</strong> mezbah.wallas</p>
-                                    <p class="mb-0"><strong class="fw-bold text-dark">Address :</strong> 123 Street New York</p>
-                                </div>
-                                <div class="col-6">
-                                    <p><strong class="fw-bold text-dark">Nationality :</strong> New York, USA</p>
-                                    <p><strong class="fw-bold text-dark">Email :</strong> contact@mezbah.com</p>
-                                    <p class="mb-0"><strong class="fw-bold text-dark">Freelancer :</strong> Available</p>
-                                </div>
+                            <div class="col-xl-7 wow fadeInUp" data-wow-delay="0.3s">
+                                <h4 class="mb-4">@item.Title</h4>
+                                <p class="mb-4">
+                                    @item.Description
+                                </p>
+                                <a href="#" class="btn btn-primary py-2 px-4"> <i class="fas fa-download me-2"></i>Cv mi İndirin</a>
                             </div>
-                            <a href="#" class="btn btn-primary py-2 px-4"> <i class="fas fa-download me-2"></i>Cv mi İndirin</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
