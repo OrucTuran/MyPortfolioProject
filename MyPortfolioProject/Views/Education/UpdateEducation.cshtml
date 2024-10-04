@@ -1,0 +1,32 @@
+﻿@model MyPortfolioProject.Models.Education
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Eğitim Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("UpdateEducation", "Education", FormMethod.Post))
+{
+    @Html.HiddenFor(e => e.EducationID)
+    <div class="form-group">
+        @Html.Label("Başlık")
+        @Html.TextBoxFor(e => e.Title, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Alt Başlık")
+        @Html.TextBoxFor(e => e.SubTitle, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Açıklama")
+        @Html.TextBoxFor(e => e.Description, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Tarih")
+        @Html.TextBoxFor(e => e.Date, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn btn-outline-info">Güncelle</button>
+    </div>
+}
+

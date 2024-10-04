@@ -4,48 +4,21 @@
     Layout = "~/Views/Admin/Index.cshtml";
 }
 
-
-<h2 class="mb-4">Yeni Eğitim Bilgisi Girişi</h2>
+<h2>Yeni Eğitim Ekleme Sayfası</h2>
 
 <form method="post">
     <label>Başlık</label>
-    <input type="text" class="form-control" />
+    <input type="text" name="Title" class="form-control" />
     <br />
     <label>Alt Başlık</label>
-    <input type="text" class="form-control" />
+    <input type="text" name="SubTitle" class="form-control" />
     <br />
     <label>Açıklama</label>
-    <textarea rows="4" class="form-control"></textarea>
+    <input type="text" name="Description" class="form-control" />
     <br />
-    <button class="btn btn-outline-info">Eğitim Bilgisini Kaydet</button>
+    <label>Tarih</label>
+    <input type="text" name="Date" class="form-control" />
+    <br />
+    <button class="btn btn-outline-info">Eğitimi Ekle</button>
 </form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-@*<table class="table table-bordered">
-    <tr>
-        <td>ID</td>
-        <td>Ad</td>
-        <td>Kategori</td>
-        <td>Sil</td>
-        <td>Güncelle</td>
-    </tr>
-    <tr>
-        <td>A24654</td>
-        <td>Domates</td>
-        <td>Sebze</td>
-        <td><button class="btn btn-danger">Sil</button></td>
-        <td><button class="btn btn-success">Güncelle</button></td>
-    </tr>
-</table>*@

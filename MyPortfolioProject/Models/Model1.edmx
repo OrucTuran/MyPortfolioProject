@@ -13,6 +13,7 @@
           <Property Name="Title" Type="nvarchar" MaxLength="250" />
           <Property Name="Description" Type="nvarchar" MaxLength="2000" />
           <Property Name="ImageURL" Type="nvarchar(max)" />
+          <Property Name="LeftTitle" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Admin">
           <Key>
@@ -47,9 +48,10 @@
             <PropertyRef Name="EducationID" />
           </Key>
           <Property Name="EducationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="250" />
           <Property Name="SubTitle" Type="nvarchar" MaxLength="100" />
           <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Experience">
           <Key>
@@ -174,6 +176,7 @@
           <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LeftTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -196,15 +199,6 @@
           <Property Name="IsRead" Type="Boolean" />
           <Property Name="CategoryID" Type="Int32" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Contact_Category" FromRole="Contact" ToRole="Category" />
-        </EntityType>
-        <EntityType Name="Education">
-          <Key>
-            <PropertyRef Name="EducationID" />
-          </Key>
-          <Property Name="EducationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Expertise">
           <Key>
@@ -269,7 +263,6 @@
           <EntitySet Name="About" EntityType="Self.About" />
           <EntitySet Name="Category" EntityType="Self.Category" />
           <EntitySet Name="Contact" EntityType="Self.Contact" />
-          <EntitySet Name="Education" EntityType="Self.Education" />
           <EntitySet Name="Expertise" EntityType="Self.Expertise" />
           <EntitySet Name="Feature" EntityType="Self.Feature" />
           <EntitySet Name="Service" EntityType="Self.Service" />
@@ -283,6 +276,7 @@
           <EntitySet Name="Experience" EntityType="DbMyPortfolioModel.Experience" />
           <EntitySet Name="Profile" EntityType="DbMyPortfolioModel.Profile" />
           <EntitySet Name="SocialMedia" EntityType="DbMyPortfolioModel.SocialMedia" />
+          <EntitySet Name="Education" EntityType="DbMyPortfolioModel.Education" />
         </EntityContainer>
         <EntityType Name="Admin">
           <Key>
@@ -325,6 +319,16 @@
           <Property Name="URL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Icon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="EducationID" />
+          </Key>
+          <Property Name="EducationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -334,6 +338,7 @@
           <EntitySetMapping Name="About">
             <EntityTypeMapping TypeName="DbMyPortfolioModel.About">
               <MappingFragment StoreEntitySet="About">
+                <ScalarProperty Name="LeftTitle" ColumnName="LeftTitle" />
                 <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
                 <ScalarProperty Name="AboutID" ColumnName="AboutID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -360,16 +365,6 @@
                 <ScalarProperty Name="SendDate" ColumnName="SendDate" />
                 <ScalarProperty Name="IsRead" ColumnName="IsRead" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Education">
-            <EntityTypeMapping TypeName="DbMyPortfolioModel.Education">
-              <MappingFragment StoreEntitySet="Education">
-                <ScalarProperty Name="EducationID" ColumnName="EducationID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -467,6 +462,17 @@
                 <ScalarProperty Name="URL" ColumnName="URL" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="SocialMediaID" ColumnName="SocialMediaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Education">
+            <EntityTypeMapping TypeName="DbMyPortfolioModel.Education">
+              <MappingFragment StoreEntitySet="Education">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="EducationID" ColumnName="EducationID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

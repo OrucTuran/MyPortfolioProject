@@ -65,6 +65,7 @@ namespace MyPortfolioProject.Controllers
         public PartialViewResult PartialAbout()
         {
             var values = context.About.ToList();
+            ViewBag.socialMedias = context.SocialMedia.ToList();
             return PartialView(values);
         }
         public PartialViewResult PartialEducation()

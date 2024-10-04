@@ -525,9 +525,11 @@
     <Content Include="Views\Contact\PartialContactSideBar.cshtml" />
     <Content Include="Views\Contact\PartialContactDetail.cshtml" />
     <Content Include="Views\Contact\PartialContactLocation.cshtml" />
+    <Content Include="Views\Education\UpdateEducation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
