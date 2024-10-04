@@ -13,7 +13,25 @@ namespace MyPortfolioProject.Controllers
         DbMyPortfolioEntities context = new DbMyPortfolioEntities();
         public ActionResult Index()
         {
+            List<SelectListItem> values = (from x in context.Category.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CategoryName,
+                                               Value = x.CategoryID.ToString()
+                                           }).ToList();
+            ViewBag.vv = values;
+
             return View();
+        }
+        [HttpPost]
+        public ActionResult Index(Contact contact)
+        {
+            contact.SendDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            contact.IsRead = false;
+
+            context.Contact.Add(contact);
+            context.SaveChanges();
+            return RedirectToAction(nameof(Index));
         }
         public PartialViewResult PartialHead()
         {
@@ -41,6 +59,7 @@ namespace MyPortfolioProject.Controllers
             ViewBag.githubURL = context.Profile.Select(x => x.GitHubURL).FirstOrDefault();
             ViewBag.imageURL = context.Profile.Select(x => x.ImageURL).FirstOrDefault();
 
+            ViewBag.socialMedias = context.SocialMedia.ToList();
             return PartialView();
         }
         public PartialViewResult PartialAbout()

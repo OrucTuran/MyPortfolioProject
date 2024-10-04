@@ -224,20 +224,6 @@
           <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SubTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Profile">
-          <Key>
-            <PropertyRef Name="ProfileID" />
-          </Key>
-          <Property Name="ProfileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Birthdate" Type="DateTime" Precision="0" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="GitHubURL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Service">
           <Key>
             <PropertyRef Name="ServiceID" />
@@ -256,15 +242,6 @@
           <Property Name="Rate" Type="Byte" />
           <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="SocialMedia">
-          <Key>
-            <PropertyRef Name="SocialMediaID" />
-          </Key>
-          <Property Name="SocialMediaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="URL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Icon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -295,10 +272,8 @@
           <EntitySet Name="Education" EntityType="Self.Education" />
           <EntitySet Name="Expertise" EntityType="Self.Expertise" />
           <EntitySet Name="Feature" EntityType="Self.Feature" />
-          <EntitySet Name="Profile" EntityType="Self.Profile" />
           <EntitySet Name="Service" EntityType="Self.Service" />
           <EntitySet Name="Skill" EntityType="Self.Skill" />
-          <EntitySet Name="SocialMedia" EntityType="Self.SocialMedia" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK_Contact_Category" Association="Self.FK_Contact_Category">
             <End Role="Category" EntitySet="Category" />
@@ -306,6 +281,8 @@
           </AssociationSet>
           <EntitySet Name="Admin" EntityType="DbMyPortfolioModel.Admin" />
           <EntitySet Name="Experience" EntityType="DbMyPortfolioModel.Experience" />
+          <EntitySet Name="Profile" EntityType="DbMyPortfolioModel.Profile" />
+          <EntitySet Name="SocialMedia" EntityType="DbMyPortfolioModel.SocialMedia" />
         </EntityContainer>
         <EntityType Name="Admin">
           <Key>
@@ -324,6 +301,29 @@
           <Property Name="SubTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="ProfileID" />
+          </Key>
+          <Property Name="ProfileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Birthdate" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="GitHubURL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SocialMedia">
+          <Key>
+            <PropertyRef Name="SocialMediaID" />
+          </Key>
+          <Property Name="SocialMediaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -393,21 +393,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Profile">
-            <EntityTypeMapping TypeName="DbMyPortfolioModel.Profile">
-              <MappingFragment StoreEntitySet="Profile">
-                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ProfileID" ColumnName="ProfileID" />
-                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="GitHubURL" ColumnName="GitHubURL" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Service">
             <EntityTypeMapping TypeName="DbMyPortfolioModel.Service">
               <MappingFragment StoreEntitySet="Service">
@@ -426,16 +411,6 @@
                 <ScalarProperty Name="SkillID" ColumnName="SkillID" />
                 <ScalarProperty Name="SkillName" ColumnName="SkillName" />
                 <ScalarProperty Name="Rate" ColumnName="Rate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SocialMedia">
-            <EntityTypeMapping TypeName="DbMyPortfolioModel.SocialMedia">
-              <MappingFragment StoreEntitySet="SocialMedia">
-                <ScalarProperty Name="SocialMediaID" ColumnName="SocialMediaID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="URL" ColumnName="URL" />
-                <ScalarProperty Name="Icon" ColumnName="Icon" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -467,6 +442,31 @@
                 <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="ExperienceID" ColumnName="ExperienceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profile">
+            <EntityTypeMapping TypeName="DbMyPortfolioModel.Profile">
+              <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="GitHubURL" ColumnName="GitHubURL" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="ProfileID" ColumnName="ProfileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SocialMedia">
+            <EntityTypeMapping TypeName="DbMyPortfolioModel.SocialMedia">
+              <MappingFragment StoreEntitySet="SocialMedia">
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SocialMediaID" ColumnName="SocialMediaID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
