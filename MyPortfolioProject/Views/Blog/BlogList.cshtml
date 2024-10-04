@@ -1,0 +1,33 @@
+﻿@model List<MyPortfolioProject.Models.Blog>
+@{
+    ViewBag.Title = "BlogList";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Blog Listesi ve İşlemleri</h2>
+<br />
+<table class="table table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Tarih</th>
+        <th>Başlık</th>
+        <th>Kim Tarafından</th>
+        <th>Konu</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BlogID</td>
+            <td>@item.Date</td>
+            <td>@item.Title</td>
+            <td>@item.ByWho</td>
+            <td>@item.Subject</td>
+            @*<td>@item.ImageURL</td>*@
+            <td><a href="/Blog/DeleteBlog/@item.BlogID/" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Blog/UpdateBlog/@item.BlogID/" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Blog/CreateBlog/" class="btn btn-outline-info">Blog Ekle</a>

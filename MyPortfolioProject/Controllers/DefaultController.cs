@@ -95,7 +95,8 @@ namespace MyPortfolioProject.Controllers
         }
         public PartialViewResult PartialBlog()
         {
-            return PartialView();
+            var values = context.Blog.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialTestimonial()
         {

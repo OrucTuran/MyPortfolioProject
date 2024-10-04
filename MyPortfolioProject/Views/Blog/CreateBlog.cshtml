@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "CreateBlog";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yeni Blog Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Tarih</label>
+    <input type="text" name="Date" class="form-control" />
+    <br />
+    <label>Başlık</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Kim Tarafından</label>
+    <input type="text" name="ByWho" class="form-control" />
+    <br />
+    <label>Konu</label>
+    <input type="text" name="Subject" class="form-control" />
+    <br />
+    <label>Görsel</label>
+    <input type="text" name="ImageURL" class="form-control" />
+    <br />
+    <button class="btn btn-outline-info">Blog Ekle</button>
+</form>

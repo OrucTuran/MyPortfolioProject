@@ -1,0 +1,33 @@
+﻿@model MyPortfolioProject.Models.Blog
+@{
+    ViewBag.Title = "UpdateBlog";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+@using (Html.BeginForm("UpdateBlog", "Blog", FormMethod.Post))
+{
+    @Html.HiddenFor(k => k.BlogID)
+    <div class="form-group">
+        <label>Tarih</label>
+        @Html.TextBoxFor(k => k.Date, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Başlık</label>
+        @Html.TextBoxFor(k => k.Title, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Kim Tarafından</label>
+        @Html.TextBoxFor(k => k.ByWho, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Konu</label>
+        @Html.TextBoxFor(k => k.Subject, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Görsel</label>
+        @Html.TextBoxFor(k => k.ImageURL, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn btn-outline-info">Güncelle</button>
+    </div>
+}
