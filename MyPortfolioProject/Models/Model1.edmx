@@ -103,6 +103,9 @@
           <Property Name="Icon" Type="nvarchar(max)" />
           <Property Name="Title" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="SubTitleA" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubTitleB" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubTitleC" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Skill">
           <Key>
@@ -226,6 +229,9 @@
           <Property Name="Icon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitleA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitleB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitleC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Skill">
           <Key>
@@ -391,6 +397,9 @@
           <EntitySetMapping Name="Service">
             <EntityTypeMapping TypeName="DbMyPortfolioModel.Service">
               <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="SubTitleC" ColumnName="SubTitleC" />
+                <ScalarProperty Name="SubTitleB" ColumnName="SubTitleB" />
+                <ScalarProperty Name="SubTitleA" ColumnName="SubTitleA" />
                 <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
                 <ScalarProperty Name="Icon" ColumnName="Icon" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

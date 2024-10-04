@@ -70,7 +70,8 @@ namespace MyPortfolioProject.Controllers
         }
         public PartialViewResult PartialEducation()
         {
-            return PartialView();
+            var values = context.Education.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialExperience()
         {
@@ -84,7 +85,8 @@ namespace MyPortfolioProject.Controllers
         }
         public PartialViewResult PartialService()
         {
-            return PartialView();
+            var values = context.Service.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialPortfolio()
         {
