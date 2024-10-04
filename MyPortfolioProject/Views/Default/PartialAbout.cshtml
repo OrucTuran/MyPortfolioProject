@@ -10,7 +10,7 @@
                     <div class="about-header bg-dark h-100 pt-6 pe-6 pb-6">
                         <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
                             <p class="text-white sub-title">Hakkımda</p>
-                            <h1 class="display-6 text-white mb-0">Oruç Turan Junior Akademi Danışmanlık (iş verin)</h1>
+                            <h1 class="display-6 text-white mb-0">@item.LeftTitle</h1>
                         </div>
                     </div>
                 </div>
@@ -21,10 +21,10 @@
                                 <div class="about-img bg-light p-4 wow fadeInUp" data-wow-delay="0.1s">
                                     <img src="@item.ImageURL" class="img-fluid w-100" alt="Image">
                                     <div class="sosial-icon">
-                                        <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
-                                        <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-twitter text-white"></i></a>
-                                        <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-instagram text-white"></i></a>
-                                        <a class="btn btn-primary btn-sm-square mb-0" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                                        @foreach (var socialMedias in ViewBag.socialMedias)
+                                        {
+                                            <a class="btn btn-primary btn-sm-square me-3"target="_blank" href="@socialMedias.URL"><i class="@socialMedias.Icon"></i></a>
+                                        }
                                     </div>
                                 </div>
                             </div>

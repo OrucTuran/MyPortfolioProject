@@ -28,7 +28,6 @@ namespace MyPortfolioProject.Models
         public virtual DbSet<About> About { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
-        public virtual DbSet<Education> Education { get; set; }
         public virtual DbSet<Expertise> Expertise { get; set; }
         public virtual DbSet<Feature> Feature { get; set; }
         public virtual DbSet<Service> Service { get; set; }
@@ -38,5 +37,6 @@ namespace MyPortfolioProject.Models
         public virtual DbSet<Experience> Experience { get; set; }
         public virtual DbSet<Profile> Profile { get; set; }
         public virtual DbSet<SocialMedia> SocialMedia { get; set; }
+        public virtual DbSet<Education> Education { get; set; }
     }
 }
