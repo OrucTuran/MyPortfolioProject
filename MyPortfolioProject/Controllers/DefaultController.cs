@@ -100,11 +100,13 @@ namespace MyPortfolioProject.Controllers
         }
         public PartialViewResult PartialTestimonial()
         {
-            return PartialView();
+            var values = context.Testimonial.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialFooter()
         {
-            return PartialView();
+            var values = context.SocialMedia.ToList();
+            return PartialView(values);
         }
     }
 }

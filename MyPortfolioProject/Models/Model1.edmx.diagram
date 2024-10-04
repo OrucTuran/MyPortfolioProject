@@ -21,6 +21,7 @@
         <EntityTypeShape EntityType="DbMyPortfolioModel.Education" Width="1.5" PointX="3" PointY="6.375" />
         <EntityTypeShape EntityType="DbMyPortfolioModel.Portfolio" Width="1.5" PointX="7.375" PointY="9.75" />
         <EntityTypeShape EntityType="DbMyPortfolioModel.Blog" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="DbMyPortfolioModel.Testimonial" Width="1.5" PointX="10.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
