@@ -38,5 +38,6 @@ namespace MyPortfolioProject.Models
         public virtual DbSet<Profile> Profile { get; set; }
         public virtual DbSet<SocialMedia> SocialMedia { get; set; }
         public virtual DbSet<Education> Education { get; set; }
+        public virtual DbSet<Portfolio> Portfolio { get; set; }
     }
 }

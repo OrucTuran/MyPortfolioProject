@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "CreatePortfolio";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yeni Portfolyo Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Üst Başlık</label>
+    <input type="text" name="SubTitle" class="form-control" />
+    <br />
+    <label>Başlık</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Görsel</label>
+    <input type="text" name="ImageURL" class="form-control" />
+    <br />
+    <button class="btn btn-outline-info">Portfolyoyu Ekle</button>
+</form>

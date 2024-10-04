@@ -181,6 +181,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Portfolio.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Profile.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -527,10 +530,12 @@
     <Content Include="Views\Contact\PartialContactDetail.cshtml" />
     <Content Include="Views\Contact\PartialContactLocation.cshtml" />
     <Content Include="Views\Education\UpdateEducation.cshtml" />
+    <Content Include="Views\Portfolio\PortfolioList.cshtml" />
+    <Content Include="Views\Portfolio\CreatePortfolio.cshtml" />
+    <Content Include="Views\Portfolio\UpdatePortfolio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Portfolio\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

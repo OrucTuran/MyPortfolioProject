@@ -90,7 +90,8 @@ namespace MyPortfolioProject.Controllers
         }
         public PartialViewResult PartialPortfolio()
         {
-            return PartialView();
+            var values = context.Portfolio.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialBlog()
         {

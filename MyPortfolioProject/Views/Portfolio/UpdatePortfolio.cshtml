@@ -1,0 +1,25 @@
+﻿@model MyPortfolioProject.Models.Portfolio
+@{
+    ViewBag.Title = "UpdatePortfolio";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+@using (Html.BeginForm("UpdatePortfolio", "Portfolio", FormMethod.Post))
+{
+    @Html.HiddenFor(k => k.PortfolioID)
+    <div class="form-group">
+        <label>Üst Başlık</label>
+        @Html.TextBoxFor(k => k.SubTitle, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Başlık</label>
+        @Html.TextBoxFor(k => k.Title, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Görsel</label>
+        @Html.TextBoxFor(k => k.ImageURL, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn btn-outline-info">Güncelle</button>
+    </div>
+}

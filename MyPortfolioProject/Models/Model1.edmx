@@ -81,6 +81,15 @@
           <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
           <Property Name="SubTitle" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Portfolio">
+          <Key>
+            <PropertyRef Name="PortfolioID" />
+          </Key>
+          <Property Name="PortfolioID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" />
+          <Property Name="ImageURL" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Profile">
           <Key>
             <PropertyRef Name="ProfileID" />
@@ -157,6 +166,7 @@
           <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Expertise" EntityType="Self.Expertise" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Feature" EntityType="Self.Feature" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Portfolio" EntityType="Self.Portfolio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
@@ -283,6 +293,7 @@
           <EntitySet Name="Profile" EntityType="DbMyPortfolioModel.Profile" />
           <EntitySet Name="SocialMedia" EntityType="DbMyPortfolioModel.SocialMedia" />
           <EntitySet Name="Education" EntityType="DbMyPortfolioModel.Education" />
+          <EntitySet Name="Portfolio" EntityType="DbMyPortfolioModel.Portfolio" />
         </EntityContainer>
         <EntityType Name="Admin">
           <Key>
@@ -334,6 +345,15 @@
           <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Portfolio">
+          <Key>
+            <PropertyRef Name="PortfolioID" />
+          </Key>
+          <Property Name="PortfolioID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -482,6 +502,16 @@
                 <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="EducationID" ColumnName="EducationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Portfolio">
+            <EntityTypeMapping TypeName="DbMyPortfolioModel.Portfolio">
+              <MappingFragment StoreEntitySet="Portfolio">
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="PortfolioID" ColumnName="PortfolioID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
