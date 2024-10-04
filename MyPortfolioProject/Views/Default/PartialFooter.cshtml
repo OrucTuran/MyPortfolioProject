@@ -1,4 +1,6 @@
-﻿<div class="container-fluid footer bg-dark border-bottom-0">
+﻿@model List<MyPortfolioProject.Models.SocialMedia>
+
+<div class="container-fluid footer bg-dark border-bottom-0">
     <div class="container wow fadeIn" data-wow-delay="0.1s">
         <div class="row g-0">
             <div class="col-12">
@@ -6,14 +8,22 @@
                     <div class="row g-4 align-items-center">
                         <div class="col-12 text-center">
                             <div class="d-flex justify-content-center">
-                                <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                                @foreach (var item in Model)
+                                {
+
+                                    <a class="btn btn-light btn-md-square me-3"target="_blank" style="color:inherit" href="@item.URL" title="@item.Title">
+                                        <i class="@item.Icon"></i>
+                                    </a>
+
+                                }
                             </div>
-                        </div>
+                            </div>
                         <div class="col-12 text-center">
-                            <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-body me-2"></i>Oruç Turan</a>, Tüm Hakları Saklıdır.</span>
+                            <span class="text-body">
+                                <a href="#" class="border-bottom text-white">
+                                    <i class="fas fa-copyright text-body me-2"></i>Oruç Turan, Tüm Hakları Saklıdır.
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
