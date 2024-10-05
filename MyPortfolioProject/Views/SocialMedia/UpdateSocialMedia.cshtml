@@ -1,0 +1,28 @@
+﻿@model MyPortfolioProject.Models.SocialMedia
+@{
+    ViewBag.Title = "UpdateSocialMedia";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Sosyal Medya Güncelleme Sayfası</h2>
+
+
+@using (Html.BeginForm("UpdateSocialMedia", "SocialMedia", FormMethod.Post))
+{
+    @Html.HiddenFor(k => k.SocialMediaID)
+    <div class="form-group">
+        <label>Başlık</label>
+        @Html.TextBoxFor(k => k.Title, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>URL</label>
+        @Html.TextBoxFor(k => k.URL, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>İkon</label>
+        @Html.TextBoxFor(k => k.Icon, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn btn-outline-info">Güncelle</button>
+    </div>
+}
