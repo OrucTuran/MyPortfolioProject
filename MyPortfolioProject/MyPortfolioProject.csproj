@@ -138,6 +138,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
@@ -494,6 +495,8 @@
     <Content Include="Content\Pigra-1.0.0\scss\bootstrap\scss\_variables.scss" />
     <Content Include="Content\Cv\CV-OrucTuran.pdf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\chart.js" />
+    <Content Include="Scripts\chart.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -575,6 +578,7 @@
     <Content Include="Views\Internship\CreateInternship.cshtml" />
     <Content Include="Views\Internship\UpdateInternship.cshtml" />
     <Content Include="Views\Default\PartialInternship.cshtml" />
+    <Content Include="Views\Chart\GetSkills.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

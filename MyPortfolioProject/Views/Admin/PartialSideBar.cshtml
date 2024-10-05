@@ -2,11 +2,17 @@
 
 <nav id="sidebar">
     <div class="p-4 pt-5">
+
         @foreach (var item in Model)
         {
             <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(@item.ImageURL); ">
             </a>
         }
+        <div class="footer">
+            <p>
+                ORUÇ TURAN - SOFTWARE DEVELOPER
+            </p>
+        </div>
         <ul class="list-unstyled components mb-5">
             <li><a href="#">Dashboard</a></li>
             <li><a href="/About/Index/">Hakkımda</a></li>
@@ -16,19 +22,16 @@
             <li><a href="/Service/ServiceList/">Hizmetlerim</a></li>
             <li><a href="/Skill/SkillList/">Yeteneklerim</a></li>
             <li><a href="/Experience/ExperienceList/">Deneyimlerim</a></li>
-            <li><a href="/SocialMedia/Index/">Sosyal Medya</a></li>
+            <li><a href="/SocialMedia/Index/">Sosyal Medyalarım</a></li>
             <li><a href="/Message/Inbox/">Gelen Mesajlar</a></li>
             <li><a href="/Blog/BlogList/">Blog</a></li>
             <li><a href="/Profile/Index/">İletişim</a></li>
             <li><a href="/Statistics/Index/">İstatistikler</a></li>
+            <li><a href="/Chart/GetSkills/">Chartlar</a></li>
             <li><a href="#">Ayarlar</a></li>
             <li><a href="#">Çıkış Yap</a></li>
         </ul>
-        <div class="footer">
-            <p>
-                ORUÇ TURAN - SOFTWARE DEVELOPER
-            </p>
-        </div>
+
     </div>
 </nav>
 
