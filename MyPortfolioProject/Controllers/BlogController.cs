@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MyPortfolioProject.Models;
 
-namespace MyBlogProject.Controllers
+namespace MyPortfolioProject.Controllers
 {
     public class BlogController : Controller
     {

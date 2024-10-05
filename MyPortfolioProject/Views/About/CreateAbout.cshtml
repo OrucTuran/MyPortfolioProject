@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "CreateAbout";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yeni Hakkımda Bilgisi Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Başlık</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" class="form-control" />
+    <br />
+    <label>Sol Başlık</label>
+    <input type="text" name="LeftTitle" class="form-control" />
+    <br />
+    <label>Görsel</label>
+    <input type="text" name="ImageURL" class="form-control" />
+    <br />
+    <button class="btn btn-outline-info">Blog Ekle</button>
+</form>

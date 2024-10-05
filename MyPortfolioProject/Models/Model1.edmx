@@ -14,6 +14,7 @@
           <Property Name="Description" Type="nvarchar" MaxLength="2000" />
           <Property Name="ImageURL" Type="nvarchar(max)" />
           <Property Name="LeftTitle" Type="nvarchar" MaxLength="250" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Admin">
           <Key>
@@ -213,6 +214,7 @@
           <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LeftTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -410,6 +412,7 @@
           <EntitySetMapping Name="About">
             <EntityTypeMapping TypeName="DbMyPortfolioModel.About">
               <MappingFragment StoreEntitySet="About">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="LeftTitle" ColumnName="LeftTitle" />
                 <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
                 <ScalarProperty Name="AboutID" ColumnName="AboutID" />
