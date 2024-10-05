@@ -41,5 +41,6 @@ namespace MyPortfolioProject.Models
         public virtual DbSet<Portfolio> Portfolio { get; set; }
         public virtual DbSet<Blog> Blog { get; set; }
         public virtual DbSet<Testimonial> Testimonial { get; set; }
+        public virtual DbSet<Internship> Internship { get; set; }
     }
 }

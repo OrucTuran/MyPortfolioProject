@@ -23,11 +23,43 @@
     @foreach (var item in Model)
     {
         count++;
+
+        string subjectColor = "";
+        switch (item.Category.CategoryName)
+        {
+            case "Teşekkür":
+                subjectColor = "badge bg-danger";
+                break;
+            case "Öneri":
+                subjectColor = "badge bg-success";
+                break;
+            case "Proje Talebi":
+                subjectColor = "badge bg-primary";
+                break;
+            case "Referans":
+                subjectColor = "badge bg-warning";
+                break;
+            case "Toplantı":
+                subjectColor = "badge bg-purple";
+                break;
+            case "Görüşme":
+                subjectColor = "badge bg-warning";
+                break;
+            case "Reklam":
+                subjectColor = "badge bg-pink";
+                break;
+            case "Diğer":
+                subjectColor = "badge bg-secondary";
+                break;
+            default:
+                subjectColor = "badge bg-dark";
+                break;
+        }
         <tr>
             <td>@count</td>
             <td>@item.NameSurname</td>
             <td>@item.SendDate</td>
-            <td>@item.Subject</td>
+            <td><span class="@subjectColor p-2" style="color:white; font-size: small">@item.Category.CategoryName</span></td>
 
             @if (item.IsRead.Equals(false))
             {

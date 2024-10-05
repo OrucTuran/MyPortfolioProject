@@ -13,7 +13,7 @@ namespace MyPortfolioProject.Controllers
         DbMyPortfolioEntities context = new DbMyPortfolioEntities();
         public ActionResult Index()
         {
-            var values = context.SocialMedia.ToList();
+            var values = context.SocialMedia.Where(x=>x.Status==true).ToList();
             return View(values);
         }
         [HttpGet]
@@ -24,6 +24,7 @@ namespace MyPortfolioProject.Controllers
         [HttpPost]
         public ActionResult CreateSocialMedia(SocialMedia socialMedia)
         {
+            socialMedia.Status = true;
             context.SocialMedia.Add(socialMedia);
             context.SaveChanges();
             return RedirectToAction(nameof(Index));
