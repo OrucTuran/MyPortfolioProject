@@ -11,11 +11,16 @@ namespace MyPortfolioProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Skill
     {
         public int SkillID { get; set; }
+        [Required(ErrorMessage ="Yetenek baþlýðý gereklidir.")]
+        [MinLength(1,ErrorMessage ="Yetenek baþlýðý en az 1 karakter olmalýdýr.")]
         public string SkillName { get; set; }
+        [Required(ErrorMessage = "Yetenek deðeri gereklidir.")]
+        [Range(1, 100, ErrorMessage = "Yetenek deðeri 1 ile 100 arasýnda olmalýdýr.")]
         public Nullable<byte> Rate { get; set; }
         public string Icon { get; set; }
         public Nullable<bool> Status { get; set; }

@@ -32,7 +32,7 @@ namespace MyPortfolioProject.Controllers
         public ActionResult DeleteSocialMedia(int id)
         {
             var value = context.SocialMedia.Find(id);
-            context.SocialMedia.Remove(value);
+            value.Status = false;
             context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }

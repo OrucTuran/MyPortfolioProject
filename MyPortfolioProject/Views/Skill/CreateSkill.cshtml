@@ -9,9 +9,11 @@
 <form method="post">
     <label>Yetenek Başlığı</label>
     <input type="text" name="SkillName" class="form-control" />
+    @Html.ValidationMessage("SkillName", "", new { @class = "text-danger" })
     <br />
     <label>Yetenek Değeri</label>
     <input type="number" name="Rate" class="form-control" />
+    @Html.ValidationMessage("Rate", "", new { @class = "text-danger" })
     <br />
     <button class="btn btn-outline-info">Yeteneği Ekle</button>
 </form>
