@@ -570,10 +570,12 @@
     <Content Include="Views\SocialMedia\Index.cshtml" />
     <Content Include="Views\SocialMedia\CreateSocialMedia.cshtml" />
     <Content Include="Views\SocialMedia\UpdateSocialMedia.cshtml" />
+    <Content Include="Views\Internship\InternshipList.cshtml" />
+    <Content Include="Views\Internship\CreateInternship.cshtml" />
+    <Content Include="Views\Internship\UpdateInternship.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Internship\" />
     <Folder Include="Views\Testimonial\" />
   </ItemGroup>
   <ItemGroup>

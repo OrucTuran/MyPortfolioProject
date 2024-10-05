@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "CreateInternship";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yeni Staj Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Şirket Adı</label>
+    <input type="text" name="CompanyName" class="form-control" />
+    @Html.ValidationMessage("CompanyName", "", new { @class = "text-danger" })
+    <br />
+    <label>Başlangıç Tarihi</label>
+    <input type="text" name="StartDate" class="form-control" />
+    @Html.ValidationMessage("StartDate", "", new { @class = "text-danger" })
+    <br />
+    <label>Bitiş Tarihi</label>
+    <input type="text" name="EndDate" class="form-control" />
+    @Html.ValidationMessage("EndDate", "", new { @class = "text-danger" })
+    <br />
+    <label>Pozisyon</label>
+    <input type="text" name="Position" class="form-control" />
+    @Html.ValidationMessage("Position", "", new { @class = "text-danger" })
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" class="form-control" />
+    @Html.ValidationMessage("Description", "", new { @class = "text-danger" })
+    <br />
+    <label>Referans Adı</label>
+    <input type="text" name="ReferenceName" class="form-control" />
+    @Html.ValidationMessage("ReferenceName", "", new { @class = "text-danger" })
+    <br />
+    <label>Referans E-Mail</label>
+    <input type="email" name="ReferenceEmail" class="form-control"/>
+    @Html.ValidationMessage("ReferenceEmail", "", new { @class = "text-danger" })
+    <br />
+    <button class="btn btn-outline-info">Yeteneği Ekle</button>
+</form>
+

@@ -1,0 +1,48 @@
+﻿@model MyPortfolioProject.Models.Internship
+@{
+    ViewBag.Title = "UpdateInternship";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+@using (Html.BeginForm("UpdateInternship", "Internship", FormMethod.Post))
+{
+    @Html.HiddenFor(k => k.InternshipID)
+<div class="form-group">
+    <label>Şirket Adı</label>
+    @Html.TextBoxFor(k => k.CompanyName, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessage("CompanyName", "", new { @class = "text-danger" })
+</div>
+<div class="form-group">
+    <label>Başlangıç Tarihi</label>
+    @Html.TextBoxFor(k => k.StartDate, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessage("StartDate", "", new { @class = "text-danger" })
+</div>
+<div class="form-group">
+    <label>Bitiş Tarihi</label>
+    @Html.TextBoxFor(k => k.EndDate, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessage("EndDate", "", new { @class = "text-danger" })
+</div>
+<div class="form-group">
+    <label>Pozisyon</label>
+    @Html.TextBoxFor(k => k.Position, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessage("Position", "", new { @class = "text-danger" })
+</div>
+<div class="form-group">
+    <label>Açıklama</label>
+    @Html.TextBoxFor(k => k.Description, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessage("Description", "", new { @class = "text-danger" })
+</div>
+<div class="form-group">
+    <label>Referans Adı</label>
+    @Html.TextBoxFor(k => k.ReferenceName, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessage("ReferenceName", "", new { @class = "text-danger" })
+</div>
+<div class="form-group">
+    <label>Referans E-Maili</label>
+    @Html.TextBoxFor(k => k.ReferenceEmail, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessage("ReferenceEmail", "", new { @class = "text-danger" })
+</div>
+    <div style="margin-top:15px">
+        <button class="btn btn btn-outline-info">Güncelle</button>
+    </div>
+}

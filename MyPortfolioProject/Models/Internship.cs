@@ -11,16 +11,39 @@ namespace MyPortfolioProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Internship
     {
         public int InternshipID { get; set; }
+
+        [Required(ErrorMessage = "Þirket adýný girin.")]
+        [StringLength(100, ErrorMessage = "Þirket adý 100 karakterden fazla olmamalýdýr.")]
         public string CompanyName { get; set; }
+
+        [Required(ErrorMessage = "Baþlangýç tarihini girin.")]
+        [DataType(DataType.Date, ErrorMessage = "Geçersiz tarih formatý.")]
         public string StartDate { get; set; }
+
+        [Required(ErrorMessage = "Bitiþ tarihini girin.")]
+        [DataType(DataType.Date, ErrorMessage = "Geçersiz tarih formatý.")]
         public string EndDate { get; set; }
+
+        [Required(ErrorMessage = "Pozisyonu girin.")]
+        [StringLength(50, ErrorMessage = "Pozisyon 50 karakterden fazla olmamalýdýr.")]
         public string Position { get; set; }
+
+        [Required(ErrorMessage = "Açýklama girin.")]
+        [StringLength(500, ErrorMessage = "Açýklama 500 karakterden fazla olmamalýdýr.")]
         public string Description { get; set; }
+
+        [Required(ErrorMessage = "Referans adýný girin.")]
+        [StringLength(100, ErrorMessage = "Referans adý 100 karakterden fazla olmamalýdýr.")]
         public string ReferenceName { get; set; }
+
+        [Required(ErrorMessage = "Referans e-posta adresini girin.")]
+        [EmailAddress(ErrorMessage = "Geçersiz e-posta adresi.")]
+        [StringLength(100, ErrorMessage = "E-posta adresi 100 karakterden fazla olmamalýdýr.")]
         public string ReferenceEmail { get; set; }
     }
 }
