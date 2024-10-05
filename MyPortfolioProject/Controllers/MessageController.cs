@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MyPortfolioProject.Models;
+using PagedList.Mvc;
+using PagedList;
 
 namespace MyPortfolioProject.Controllers
 {
@@ -11,9 +13,9 @@ namespace MyPortfolioProject.Controllers
     {
         // GET: Message
         DbMyPortfolioEntities context = new DbMyPortfolioEntities();
-        public ActionResult Inbox()
+        public ActionResult Inbox(int page = 1)
         {
-            var values = context.Contact.ToList();
+            var values = context.Contact.ToList().ToPagedList(page, 5);
             return View(values);
         }
         public ActionResult ChangeMessageStatusToTrue(int id)
