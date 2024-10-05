@@ -13,7 +13,7 @@ namespace MyPortfolioProject.Controllers
 
         public ActionResult Index()
         {
-            var values = context.About.ToList();
+            var values = context.About.Where(x=>x.Status==true).ToList();
             return View(values);
         }
 

@@ -1,7 +1,7 @@
 ﻿@model List<MyPortfolioProject.Models.About>
 
 
-@foreach (var item in Model)
+@foreach (var item in Model.Where(x=>x.Status==true))
 {
     <div class="container-fluid" id="pigraAbout">
         <div class="container">

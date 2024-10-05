@@ -15,7 +15,7 @@
         <th>Sil</th>
         <th>Güncelle</th>
     </tr>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Where(x=>x.Status==true))
     {
         <tr>
             <td>@item.SocialMediaID</td>
