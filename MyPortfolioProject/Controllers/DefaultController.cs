@@ -108,5 +108,10 @@ namespace MyPortfolioProject.Controllers
             var values = context.SocialMedia.ToList();
             return PartialView(values);
         }
+        public PartialViewResult PartialInternship()
+        {
+            var values = context.Internship.ToList();
+            return PartialView(values);
+        }
     }
 }
