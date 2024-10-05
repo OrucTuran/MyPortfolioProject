@@ -492,6 +492,7 @@
     <Content Include="Content\Pigra-1.0.0\scss\bootstrap\scss\_type.scss" />
     <Content Include="Content\Pigra-1.0.0\scss\bootstrap\scss\_utilities.scss" />
     <Content Include="Content\Pigra-1.0.0\scss\bootstrap\scss\_variables.scss" />
+    <Content Include="Content\Cv\CV-OrucTuran.pdf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -1,6 +1,12 @@
-﻿<nav id="sidebar">
+﻿@model List<MyPortfolioProject.Models.Profile>
+
+<nav id="sidebar">
     <div class="p-4 pt-5">
-        <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(https://www.loucoll.ac.uk/sites/default/files/apprenticeship-vacancy-image/app-image-12.jpg); "></a>
+        @foreach (var item in Model)
+        {
+            <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(@item.ImageURL); ">
+            </a>
+        }
         <ul class="list-unstyled components mb-5">
             <li><a href="#">Dashboard</a></li>
             <li><a href="/About/Index/">Hakkımda</a></li>
@@ -20,7 +26,7 @@
         </ul>
         <div class="footer">
             <p>
-               ORUÇ TURAN - SOFTWARE DEVELOPER
+                ORUÇ TURAN - SOFTWARE DEVELOPER
             </p>
         </div>
     </div>
